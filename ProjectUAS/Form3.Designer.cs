@@ -63,6 +63,7 @@
             this.btnOpen.TabIndex = 24;
             this.btnOpen.Text = "Open";
             this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnSave
             // 
@@ -72,6 +73,7 @@
             this.btnSave.TabIndex = 23;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClear
             // 
@@ -81,6 +83,7 @@
             this.btnClear.TabIndex = 22;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnAdd
             // 
@@ -90,6 +93,7 @@
             this.btnAdd.TabIndex = 21;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label4
             // 
@@ -141,6 +145,7 @@
             this.txtNamaPembeli.Name = "txtNamaPembeli";
             this.txtNamaPembeli.Size = new System.Drawing.Size(162, 21);
             this.txtNamaPembeli.TabIndex = 15;
+            this.txtNamaPembeli.SelectedIndexChanged += new System.EventHandler(this.txtNamaPembeli_SelectedIndexChanged);
             // 
             // label1
             // 

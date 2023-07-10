@@ -74,6 +74,7 @@
             this.btnClear.TabIndex = 15;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnOpen
             // 
@@ -83,6 +84,7 @@
             this.btnOpen.TabIndex = 14;
             this.btnOpen.Text = "Open";
             this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnSave
             // 
@@ -92,6 +94,7 @@
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnAdd
             // 
@@ -101,6 +104,7 @@
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtNoHP
             // 
@@ -115,6 +119,7 @@
             this.txtIDKasir.Name = "txtIDKasir";
             this.txtIDKasir.Size = new System.Drawing.Size(274, 20);
             this.txtIDKasir.TabIndex = 10;
+            this.txtIDKasir.TextChanged += new System.EventHandler(this.txtIDKasir_TextChanged);
             // 
             // dataGridView1
             // 
@@ -205,7 +210,7 @@
             this.Controls.Add(this.txtIDKasir);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form4";
-            this.Text = "Form4";
+            this.Text = "Kasir";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

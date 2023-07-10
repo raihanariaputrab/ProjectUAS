@@ -29,8 +29,8 @@ namespace ProjectUAS
 
         private void btnPembeli_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
-            form2.Show();
+            Form11 form11 = new Form11();
+            form11.Show();
             this.Hide();
         }
 
@@ -53,9 +53,14 @@ namespace ProjectUAS
 
         private void btnBuku_Click_1(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3();
-            form3.Show();
+            Form12 form12 = new Form12();
+            form12.Show();
             this.Hide();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

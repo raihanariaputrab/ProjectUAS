@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnPembeli = new System.Windows.Forms.Button();
-            this.btnKasir = new System.Windows.Forms.Button();
             this.btnBuku = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -37,7 +36,7 @@
             // 
             // btnPembeli
             // 
-            this.btnPembeli.Location = new System.Drawing.Point(232, 348);
+            this.btnPembeli.Location = new System.Drawing.Point(289, 348);
             this.btnPembeli.Name = "btnPembeli";
             this.btnPembeli.Size = new System.Drawing.Size(81, 33);
             this.btnPembeli.TabIndex = 0;
@@ -45,23 +44,13 @@
             this.btnPembeli.UseVisualStyleBackColor = true;
             this.btnPembeli.Click += new System.EventHandler(this.btnPembeli_Click);
             // 
-            // btnKasir
-            // 
-            this.btnKasir.Location = new System.Drawing.Point(344, 348);
-            this.btnKasir.Name = "btnKasir";
-            this.btnKasir.Size = new System.Drawing.Size(81, 33);
-            this.btnKasir.TabIndex = 1;
-            this.btnKasir.Text = "KASIR";
-            this.btnKasir.UseVisualStyleBackColor = true;
-            this.btnKasir.Click += new System.EventHandler(this.btnKasir_Click_1);
-            // 
             // btnBuku
             // 
-            this.btnBuku.Location = new System.Drawing.Point(458, 348);
+            this.btnBuku.Location = new System.Drawing.Point(404, 348);
             this.btnBuku.Name = "btnBuku";
             this.btnBuku.Size = new System.Drawing.Size(81, 33);
             this.btnBuku.TabIndex = 2;
-            this.btnBuku.Text = "BUKU";
+            this.btnBuku.Text = "KARYAWAN";
             this.btnBuku.UseVisualStyleBackColor = true;
             this.btnBuku.Click += new System.EventHandler(this.btnBuku_Click_1);
             // 
@@ -84,10 +73,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnBuku);
-            this.Controls.Add(this.btnKasir);
             this.Controls.Add(this.btnPembeli);
             this.Name = "Form1";
             this.Text = "Halaman Utama";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -96,7 +85,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnPembeli;
-        private System.Windows.Forms.Button btnKasir;
         private System.Windows.Forms.Button btnBuku;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
