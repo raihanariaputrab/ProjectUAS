@@ -83,7 +83,7 @@ namespace ProjectUAS
             else
             {
                 koneksi.Open();
-                string str = "insert into dbo.TokoGramedia (id_kasir, alamat, no_hp, username, password)" + "values(@id, @almt, @nh, @us, @ps)";
+                string str = "insert into dbo.Kasir (id_kasir, alamat, no_hp, username, password)" + "values(@id, @almt, @nh, @us, @ps)";
                 SqlCommand cmd = new SqlCommand(str, koneksi);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add(new SqlParameter("id", idKasir));

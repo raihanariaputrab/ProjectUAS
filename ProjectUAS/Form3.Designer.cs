@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            this.txtIDBuku = new System.Windows.Forms.Label();
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -37,23 +36,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtHargaBuku = new System.Windows.Forms.ComboBox();
-            this.txtNamaPengarang = new System.Windows.Forms.ComboBox();
-            this.txtNamaPembeli = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtNamaPembeli = new System.Windows.Forms.TextBox();
+            this.txtIDBuku = new System.Windows.Forms.TextBox();
+            this.txtNamaPengarang = new System.Windows.Forms.TextBox();
+            this.txtHargaBuku = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtIDBuku
-            // 
-            this.txtIDBuku.AutoSize = true;
-            this.txtIDBuku.Location = new System.Drawing.Point(281, 314);
-            this.txtIDBuku.Name = "txtIDBuku";
-            this.txtIDBuku.Size = new System.Drawing.Size(37, 13);
-            this.txtIDBuku.TabIndex = 25;
-            this.txtIDBuku.Text = "12345";
             // 
             // btnOpen
             // 
@@ -61,37 +52,37 @@
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(75, 23);
             this.btnOpen.TabIndex = 24;
-            this.btnOpen.Text = "Open";
+            this.btnOpen.Text = "Read";
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(469, 362);
+            this.btnSave.Location = new System.Drawing.Point(530, 358);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 23;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Insert";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(469, 327);
+            this.btnClear.Location = new System.Drawing.Point(530, 323);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 22;
-            this.btnClear.Text = "Clear";
+            this.btnClear.Text = "Delete";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(469, 294);
+            this.btnAdd.Location = new System.Drawing.Point(530, 290);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 21;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Create";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -122,31 +113,6 @@
             this.label2.TabIndex = 18;
             this.label2.Text = "ID Buku";
             // 
-            // txtHargaBuku
-            // 
-            this.txtHargaBuku.FormattingEnabled = true;
-            this.txtHargaBuku.Location = new System.Drawing.Point(267, 381);
-            this.txtHargaBuku.Name = "txtHargaBuku";
-            this.txtHargaBuku.Size = new System.Drawing.Size(162, 21);
-            this.txtHargaBuku.TabIndex = 17;
-            // 
-            // txtNamaPengarang
-            // 
-            this.txtNamaPengarang.FormattingEnabled = true;
-            this.txtNamaPengarang.Location = new System.Drawing.Point(267, 342);
-            this.txtNamaPengarang.Name = "txtNamaPengarang";
-            this.txtNamaPengarang.Size = new System.Drawing.Size(162, 21);
-            this.txtNamaPengarang.TabIndex = 16;
-            // 
-            // txtNamaPembeli
-            // 
-            this.txtNamaPembeli.FormattingEnabled = true;
-            this.txtNamaPembeli.Location = new System.Drawing.Point(267, 277);
-            this.txtNamaPembeli.Name = "txtNamaPembeli";
-            this.txtNamaPembeli.Size = new System.Drawing.Size(162, 21);
-            this.txtNamaPembeli.TabIndex = 15;
-            this.txtNamaPembeli.SelectedIndexChanged += new System.EventHandler(this.txtNamaPembeli_SelectedIndexChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -175,13 +141,44 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtNamaPembeli
+            // 
+            this.txtNamaPembeli.Location = new System.Drawing.Point(312, 273);
+            this.txtNamaPembeli.Name = "txtNamaPembeli";
+            this.txtNamaPembeli.Size = new System.Drawing.Size(151, 20);
+            this.txtNamaPembeli.TabIndex = 33;
+            // 
+            // txtIDBuku
+            // 
+            this.txtIDBuku.Location = new System.Drawing.Point(312, 311);
+            this.txtIDBuku.Name = "txtIDBuku";
+            this.txtIDBuku.Size = new System.Drawing.Size(151, 20);
+            this.txtIDBuku.TabIndex = 34;
+            // 
+            // txtNamaPengarang
+            // 
+            this.txtNamaPengarang.Location = new System.Drawing.Point(312, 346);
+            this.txtNamaPengarang.Name = "txtNamaPengarang";
+            this.txtNamaPengarang.Size = new System.Drawing.Size(151, 20);
+            this.txtNamaPengarang.TabIndex = 35;
+            // 
+            // txtHargaBuku
+            // 
+            this.txtHargaBuku.Location = new System.Drawing.Point(312, 381);
+            this.txtHargaBuku.Name = "txtHargaBuku";
+            this.txtHargaBuku.Size = new System.Drawing.Size(151, 20);
+            this.txtHargaBuku.TabIndex = 36;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtHargaBuku);
+            this.Controls.Add(this.txtNamaPengarang);
             this.Controls.Add(this.txtIDBuku);
+            this.Controls.Add(this.txtNamaPembeli);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClear);
@@ -189,9 +186,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtHargaBuku);
-            this.Controls.Add(this.txtNamaPengarang);
-            this.Controls.Add(this.txtNamaPembeli);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form3";
@@ -204,8 +198,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label txtIDBuku;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClear;
@@ -213,11 +205,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox txtHargaBuku;
-        private System.Windows.Forms.ComboBox txtNamaPengarang;
-        private System.Windows.Forms.ComboBox txtNamaPembeli;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtNamaPembeli;
+        private System.Windows.Forms.TextBox txtIDBuku;
+        private System.Windows.Forms.TextBox txtNamaPengarang;
+        private System.Windows.Forms.TextBox txtHargaBuku;
     }
 }

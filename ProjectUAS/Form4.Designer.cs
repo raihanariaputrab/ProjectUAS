@@ -72,7 +72,7 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 15;
-            this.btnClear.Text = "Clear";
+            this.btnClear.Text = "Delete";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -82,7 +82,7 @@
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(75, 23);
             this.btnOpen.TabIndex = 14;
-            this.btnOpen.Text = "Open";
+            this.btnOpen.Text = "Read";
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
@@ -92,7 +92,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 13;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Insert";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -102,7 +102,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Create";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 

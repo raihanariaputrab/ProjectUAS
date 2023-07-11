@@ -13,11 +13,14 @@ namespace ProjectUAS
 {
     public partial class Form3 : Form
     {
-        string connectionString = "data source = LAPTOP-CK57KRTO;database=TokoGramedia;MultipleActiveResultSets=True;User ID = sa; Password = Mudah123";
+        private string stringConnection = "data source = LAPTOP-CK57KRTO;" + "database=TokoGramedia;User ID=sa; Password=Mudah123";
         private SqlConnection koneksi;
+
         public Form3()
         {
             InitializeComponent();
+            koneksi = new SqlConnection(stringConnection);
+            refreshform();
         }
 
         private void refreshform()
@@ -25,9 +28,6 @@ namespace ProjectUAS
             txtNamaPembeli.Enabled = false;
             txtNamaPengarang.Enabled = false;
             txtHargaBuku.Enabled = false;
-            txtNamaPembeli.SelectedIndex = -1;
-            txtNamaPengarang.SelectedIndex = -1;
-            txtHargaBuku.SelectedIndex = -1;
             txtIDBuku.Visible = false;
             btnSave.Enabled = false;
             btnClear.Enabled = false;
@@ -35,10 +35,15 @@ namespace ProjectUAS
 
         }
 
+        private void dataGridview1_CellContentClick(object sender, DataGridViewCellCancelEventArgs e)
+        {
+           
+        }
+
         private void dataGridView()
         {
             koneksi.Open();
-            string str = "select * from dbo.data_pembeli";
+            string str = "select * from dbo.buku";
             SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -83,54 +88,15 @@ namespace ProjectUAS
             txtIDBuku.Text = id;
         }
 
-        private void cbNamaPembeli()
-        {
-            koneksi.Open();
-            string str = "select nama_pembeli from dbo.pembeli where " +
-                "not EXISTS(select id_status from dbo.status_pembeli where " +
-                "status_pembeli.idBuku = mahasiswa.idBuku)";
-            SqlCommand cmd = new SqlCommand(str, koneksi);
-            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            cmd.ExecuteReader();
-            koneksi.Close();
-
-            txtNamaPembeli.DisplayMember = "nama_mahasiswa";
-            txtNamaPembeli.ValueMember = "Nim";
-            txtNamaPembeli.DataSource = ds.Tables[0];
-        }
-
-        private void cbHarga()
-        {
-            int y = DateTime.Now.Year - 2010;
-            string[] type = new string[y];
-            int i = 0;
-            for (i = 0; i < type.Length; i++)
-            {
-                if (i == 0)
-                {
-                    txtHargaBuku.Items.Add("2010");
-                }
-                else
-                {
-                    int l = 2010 + i;
-                    txtHargaBuku.Items.Add(l.ToString());
-                }
-            }
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             txtNamaPembeli.Enabled = true;
             txtNamaPengarang.Enabled = true;
             txtHargaBuku.Enabled = true;
             txtIDBuku.Visible = true;
-            cbHarga();
-            cbNamaPembeli();
             btnClear.Enabled = true;
             btnSave.Enabled = true;
-            btnAdd.Enabled = false;
+            btnAdd.Enabled = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -144,7 +110,7 @@ namespace ProjectUAS
             string kodestatus = "";
             koneksi.Open();
 
-            string str = "select count (*) from dbo.nama_pembeli";
+            string str = "select count (*) from dbo.buku";
             SqlCommand cm = new SqlCommand(str, koneksi);
             count = (int)cm.ExecuteScalar();
 
@@ -154,21 +120,19 @@ namespace ProjectUAS
             }
             else
             {
-                string querryString = "select max(id_status) from dbo.nama_pembeli";
+                string querryString = "select from dbo.buku";
                 SqlCommand cmStatusMahasiswaSum = new SqlCommand(str, koneksi);
                 int totalStatusMahasiswa = (int)cmStatusMahasiswaSum.ExecuteScalar();
                 int finalkodestatusint = totalStatusMahasiswa + 1;
                 kodestatus = Convert.ToString(finalkodestatusint);
             }
-            string queryString = "insert into dbo.status_mahasiswa (nama_pembeli, id_buku, " +
-                "nama_pengarang, harga_buku)" + "values(@ids, @idB, @np, @hb)";
+            string queryString = "insert into dbo.buku (id_buku, nama_pengarang, harga)" + "values(@ids, @idB, @np)";
             SqlCommand cmd = new SqlCommand(queryString, koneksi);
             cmd.CommandType = CommandType.Text;
 
-            cmd.Parameters.Add(new SqlParameter("ids", kodestatus));
-            cmd.Parameters.Add(new SqlParameter("idB", idBuku));
-            cmd.Parameters.Add(new SqlParameter("np", NamaPengarang));
-            cmd.Parameters.Add(new SqlParameter("hb", HargaBuku));
+            cmd.Parameters.Add(new SqlParameter("ids", idBuku));
+            cmd.Parameters.Add(new SqlParameter("idB", NamaPengarang));
+            cmd.Parameters.Add(new SqlParameter("np", HargaBuku));
             cmd.ExecuteNonQuery();
             koneksi.Close();
 

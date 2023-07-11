@@ -33,12 +33,12 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtIDBuku = new System.Windows.Forms.TextBox();
-            this.txtNamaPembeli = new System.Windows.Forms.TextBox();
-            this.txtIDPembeli = new System.Windows.Forms.TextBox();
-            this.IDBuku = new System.Windows.Forms.Label();
-            this.NamaPembeli = new System.Windows.Forms.Label();
-            this.IDPembeli = new System.Windows.Forms.Label();
+            this.txtAlamat = new System.Windows.Forms.TextBox();
+            this.txtNoHP = new System.Windows.Forms.TextBox();
+            this.txtIDKrywn = new System.Windows.Forms.TextBox();
+            this.txtAlmt = new System.Windows.Forms.Label();
+            this.NoHP = new System.Windows.Forms.Label();
+            this.IDkrywn = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -78,54 +78,54 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // txtIDBuku
+            // txtAlamat
             // 
-            this.txtIDBuku.Location = new System.Drawing.Point(297, 191);
-            this.txtIDBuku.Name = "txtIDBuku";
-            this.txtIDBuku.Size = new System.Drawing.Size(270, 20);
-            this.txtIDBuku.TabIndex = 37;
+            this.txtAlamat.Location = new System.Drawing.Point(297, 191);
+            this.txtAlamat.Name = "txtAlamat";
+            this.txtAlamat.Size = new System.Drawing.Size(270, 20);
+            this.txtAlamat.TabIndex = 37;
             // 
-            // txtNamaPembeli
+            // txtNoHP
             // 
-            this.txtNamaPembeli.Location = new System.Drawing.Point(297, 152);
-            this.txtNamaPembeli.Name = "txtNamaPembeli";
-            this.txtNamaPembeli.Size = new System.Drawing.Size(270, 20);
-            this.txtNamaPembeli.TabIndex = 36;
+            this.txtNoHP.Location = new System.Drawing.Point(297, 152);
+            this.txtNoHP.Name = "txtNoHP";
+            this.txtNoHP.Size = new System.Drawing.Size(270, 20);
+            this.txtNoHP.TabIndex = 36;
             // 
-            // txtIDPembeli
+            // txtIDKrywn
             // 
-            this.txtIDPembeli.Location = new System.Drawing.Point(297, 112);
-            this.txtIDPembeli.Name = "txtIDPembeli";
-            this.txtIDPembeli.Size = new System.Drawing.Size(270, 20);
-            this.txtIDPembeli.TabIndex = 35;
+            this.txtIDKrywn.Location = new System.Drawing.Point(297, 112);
+            this.txtIDKrywn.Name = "txtIDKrywn";
+            this.txtIDKrywn.Size = new System.Drawing.Size(270, 20);
+            this.txtIDKrywn.TabIndex = 35;
             // 
-            // IDBuku
+            // txtAlmt
             // 
-            this.IDBuku.AutoSize = true;
-            this.IDBuku.Location = new System.Drawing.Point(172, 194);
-            this.IDBuku.Name = "IDBuku";
-            this.IDBuku.Size = new System.Drawing.Size(39, 13);
-            this.IDBuku.TabIndex = 34;
-            this.IDBuku.Text = "Alamat";
+            this.txtAlmt.AutoSize = true;
+            this.txtAlmt.Location = new System.Drawing.Point(172, 194);
+            this.txtAlmt.Name = "txtAlmt";
+            this.txtAlmt.Size = new System.Drawing.Size(39, 13);
+            this.txtAlmt.TabIndex = 34;
+            this.txtAlmt.Text = "Alamat";
             // 
-            // NamaPembeli
+            // NoHP
             // 
-            this.NamaPembeli.AutoSize = true;
-            this.NamaPembeli.Location = new System.Drawing.Point(172, 152);
-            this.NamaPembeli.Name = "NamaPembeli";
-            this.NamaPembeli.Size = new System.Drawing.Size(39, 13);
-            this.NamaPembeli.TabIndex = 33;
-            this.NamaPembeli.Text = "No HP";
+            this.NoHP.AutoSize = true;
+            this.NoHP.Location = new System.Drawing.Point(172, 152);
+            this.NoHP.Name = "NoHP";
+            this.NoHP.Size = new System.Drawing.Size(39, 13);
+            this.NoHP.TabIndex = 33;
+            this.NoHP.Text = "No HP";
             // 
-            // IDPembeli
+            // IDkrywn
             // 
-            this.IDPembeli.AutoSize = true;
-            this.IDPembeli.Location = new System.Drawing.Point(172, 112);
-            this.IDPembeli.Name = "IDPembeli";
-            this.IDPembeli.Size = new System.Drawing.Size(68, 13);
-            this.IDPembeli.TabIndex = 32;
-            this.IDPembeli.Text = "ID Karyawan";
-            this.IDPembeli.Click += new System.EventHandler(this.IDPembeli_Click);
+            this.IDkrywn.AutoSize = true;
+            this.IDkrywn.Location = new System.Drawing.Point(172, 112);
+            this.IDkrywn.Name = "IDkrywn";
+            this.IDkrywn.Size = new System.Drawing.Size(68, 13);
+            this.IDkrywn.TabIndex = 32;
+            this.IDkrywn.Text = "ID Karyawan";
+            this.IDkrywn.Click += new System.EventHandler(this.IDPembeli_Click);
             // 
             // Form5
             // 
@@ -136,14 +136,15 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtIDBuku);
-            this.Controls.Add(this.txtNamaPembeli);
-            this.Controls.Add(this.txtIDPembeli);
-            this.Controls.Add(this.IDBuku);
-            this.Controls.Add(this.NamaPembeli);
-            this.Controls.Add(this.IDPembeli);
+            this.Controls.Add(this.txtAlamat);
+            this.Controls.Add(this.txtNoHP);
+            this.Controls.Add(this.txtIDKrywn);
+            this.Controls.Add(this.txtAlmt);
+            this.Controls.Add(this.NoHP);
+            this.Controls.Add(this.IDkrywn);
             this.Name = "Form5";
             this.Text = "Karyawan";
+            this.Load += new System.EventHandler(this.Form5_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,11 +156,11 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox txtIDBuku;
-        private System.Windows.Forms.TextBox txtNamaPembeli;
-        private System.Windows.Forms.TextBox txtIDPembeli;
-        private System.Windows.Forms.Label IDBuku;
-        private System.Windows.Forms.Label NamaPembeli;
-        private System.Windows.Forms.Label IDPembeli;
+        private System.Windows.Forms.TextBox txtAlamat;
+        private System.Windows.Forms.TextBox txtNoHP;
+        private System.Windows.Forms.TextBox txtIDKrywn;
+        private System.Windows.Forms.Label txtAlmt;
+        private System.Windows.Forms.Label NoHP;
+        private System.Windows.Forms.Label IDkrywn;
     }
 }

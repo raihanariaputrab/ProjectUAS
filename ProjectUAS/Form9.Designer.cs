@@ -29,44 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form9));
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtIDBuku = new System.Windows.Forms.TextBox();
             this.IDBuku = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(451, 281);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 68;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(338, 281);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 67;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(226, 281);
+            this.btnAdd.Location = new System.Drawing.Point(536, 307);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 66;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Read";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtIDBuku
             // 
-            this.txtIDBuku.Location = new System.Drawing.Point(307, 238);
+            this.txtIDBuku.Location = new System.Drawing.Point(245, 309);
             this.txtIDBuku.Name = "txtIDBuku";
             this.txtIDBuku.Size = new System.Drawing.Size(270, 20);
             this.txtIDBuku.TabIndex = 65;
@@ -74,11 +58,11 @@
             // IDBuku
             // 
             this.IDBuku.AutoSize = true;
-            this.IDBuku.Location = new System.Drawing.Point(182, 241);
+            this.IDBuku.Location = new System.Drawing.Point(120, 312);
             this.IDBuku.Name = "IDBuku";
-            this.IDBuku.Size = new System.Drawing.Size(41, 13);
+            this.IDBuku.Size = new System.Drawing.Size(46, 13);
             this.IDBuku.TabIndex = 64;
-            this.IDBuku.Text = "ID Rak";
+            this.IDBuku.Text = "ID Buku";
             this.IDBuku.Click += new System.EventHandler(this.IDBuku_Click);
             // 
             // button1
@@ -91,31 +75,40 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(107, 68);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 47;
+            this.dataGridView1.Size = new System.Drawing.Size(542, 189);
+            this.dataGridView1.TabIndex = 70;
+            // 
             // Form9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtIDBuku);
             this.Controls.Add(this.IDBuku);
             this.Name = "Form9";
-            this.Text = "Rak";
+            this.Text = "Transaksi";
+            this.Load += new System.EventHandler(this.Form9_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtIDBuku;
         private System.Windows.Forms.Label IDBuku;
         private System.Windows.Forms.Button button1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
