@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtIDBuku = new System.Windows.Forms.TextBox();
@@ -39,21 +38,12 @@
             this.NamaPembeli = new System.Windows.Forms.Label();
             this.IDPembeli = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(435, 336);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 29;
-            this.btnClear.Text = "Delete";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(322, 336);
+            this.btnSave.Location = new System.Drawing.Point(395, 355);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 28;
@@ -63,7 +53,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(210, 336);
+            this.btnAdd.Location = new System.Drawing.Point(283, 355);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 27;
@@ -73,21 +63,21 @@
             // 
             // txtIDBuku
             // 
-            this.txtIDBuku.Location = new System.Drawing.Point(288, 218);
+            this.txtIDBuku.Location = new System.Drawing.Point(292, 243);
             this.txtIDBuku.Name = "txtIDBuku";
             this.txtIDBuku.Size = new System.Drawing.Size(270, 20);
             this.txtIDBuku.TabIndex = 23;
             // 
             // txtNamaPembeli
             // 
-            this.txtNamaPembeli.Location = new System.Drawing.Point(288, 179);
+            this.txtNamaPembeli.Location = new System.Drawing.Point(292, 204);
             this.txtNamaPembeli.Name = "txtNamaPembeli";
             this.txtNamaPembeli.Size = new System.Drawing.Size(270, 20);
             this.txtNamaPembeli.TabIndex = 22;
             // 
             // txtIDPembeli
             // 
-            this.txtIDPembeli.Location = new System.Drawing.Point(288, 139);
+            this.txtIDPembeli.Location = new System.Drawing.Point(292, 164);
             this.txtIDPembeli.Name = "txtIDPembeli";
             this.txtIDPembeli.Size = new System.Drawing.Size(270, 20);
             this.txtIDPembeli.TabIndex = 21;
@@ -96,7 +86,7 @@
             // IDBuku
             // 
             this.IDBuku.AutoSize = true;
-            this.IDBuku.Location = new System.Drawing.Point(163, 221);
+            this.IDBuku.Location = new System.Drawing.Point(167, 246);
             this.IDBuku.Name = "IDBuku";
             this.IDBuku.Size = new System.Drawing.Size(46, 13);
             this.IDBuku.TabIndex = 17;
@@ -105,7 +95,7 @@
             // NamaPembeli
             // 
             this.NamaPembeli.AutoSize = true;
-            this.NamaPembeli.Location = new System.Drawing.Point(163, 179);
+            this.NamaPembeli.Location = new System.Drawing.Point(167, 204);
             this.NamaPembeli.Name = "NamaPembeli";
             this.NamaPembeli.Size = new System.Drawing.Size(75, 13);
             this.NamaPembeli.TabIndex = 16;
@@ -114,7 +104,7 @@
             // IDPembeli
             // 
             this.IDPembeli.AutoSize = true;
-            this.IDPembeli.Location = new System.Drawing.Point(163, 139);
+            this.IDPembeli.Location = new System.Drawing.Point(167, 164);
             this.IDPembeli.Name = "IDPembeli";
             this.IDPembeli.Size = new System.Drawing.Size(58, 13);
             this.IDPembeli.TabIndex = 15;
@@ -130,13 +120,24 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(309, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 13);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Silahkan Isi Data Berikut";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtIDBuku);
@@ -154,8 +155,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtIDBuku;
@@ -165,5 +164,6 @@
         private System.Windows.Forms.Label NamaPembeli;
         private System.Windows.Forms.Label IDPembeli;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }

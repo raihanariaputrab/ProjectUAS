@@ -29,8 +29,8 @@ namespace ProjectUAS
 
         private void btnPembeli_Click(object sender, EventArgs e)
         {
-            Form11 form11 = new Form11();
-            form11.Show();
+            Form13 form13 = new Form13();
+            form13.Show();
             this.Hide();
         }
 

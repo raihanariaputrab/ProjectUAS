@@ -29,7 +29,7 @@ namespace ProjectUAS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form11 fr = new Form11();
+            Form13 fr = new Form13();
             fr.Show();
             this.Hide();
         }

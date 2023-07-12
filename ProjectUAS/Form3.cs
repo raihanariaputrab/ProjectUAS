@@ -57,7 +57,7 @@ namespace ProjectUAS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form11 fr = new Form11();
+            Form13 fr = new Form13();
             fr.Show();
             this.Hide();
         }
@@ -105,9 +105,9 @@ namespace ProjectUAS
             else
             {
                 string querryString = "select from dbo.buku";
-                SqlCommand cmStatusMahasiswaSum = new SqlCommand(str, koneksi);
-                int totalStatusMahasiswa = (int)cmStatusMahasiswaSum.ExecuteScalar();
-                int finalkodestatusint = totalStatusMahasiswa + 1;
+                SqlCommand cmBukuSum = new SqlCommand(str, koneksi);
+                int totalBuku = (int)cmBukuSum.ExecuteScalar();
+                int finalkodestatusint = totalBuku + 1;
                 kodestatus = Convert.ToString(finalkodestatusint);
             }
             string queryString = "insert into dbo.buku (id_buku, nama_pengarang, harga)" + "values(@ids, @idB, @np)";

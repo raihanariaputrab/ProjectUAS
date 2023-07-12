@@ -35,7 +35,6 @@ namespace ProjectUAS
             txtNamaPembeli.Enabled = true;
             txtIDBuku.Enabled = true;
             btnSave.Enabled = true;
-            btnClear.Enabled = true;
             btnAdd.Enabled = true;
         }
 
@@ -66,7 +65,7 @@ namespace ProjectUAS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form11 fr = new Form11();
+            Form13 fr = new Form13();
             fr.Show();
             this.Hide();
         }
@@ -78,7 +77,6 @@ namespace ProjectUAS
             txtNamaPembeli.Enabled = false;
             btnAdd.Enabled = true;
             btnSave.Enabled = false;
-            btnClear.Enabled = false;
             clearBinding();
             form2();
         }
@@ -95,9 +93,16 @@ namespace ProjectUAS
 
         }
 
+
+
         private void btnClear_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void form2()

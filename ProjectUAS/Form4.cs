@@ -64,7 +64,7 @@ namespace ProjectUAS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form11 fr = new Form11();
+            Form13 fr = new Form13();
             fr.Show();
             this.Hide();
         }
@@ -151,6 +151,40 @@ namespace ProjectUAS
         private void txtIDKasir_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string upd = "UPDATE kasir SET id_kasir = @id_kasir, no_hp = @no_hp, password = @password, alamat = @alamat, username = @username where id_kasir = @id_kasir";
+
+            using (SqlConnection conn = new SqlConnection(stringConnection))
+            {
+                using (SqlCommand cmd = new SqlCommand(upd, conn))
+                {
+                    cmd.Parameters.AddWithValue("id_kasir", txtIDKasir.Text);
+                    cmd.Parameters.AddWithValue("no_hp", txtNoHP.Text);
+                    cmd.Parameters.AddWithValue("password", txtPassword.Text);
+                    cmd.Parameters.AddWithValue("alamat", txtAlamat.Text);
+                    cmd.Parameters.AddWithValue("username", txtUsername.Text);
+
+
+                    try
+                    {
+                        conn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        MessageBox.Show("Data Berhasil di Updated");
+                        dataGridView();
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("An error occured: " + ex.Message + " (Error Code: " + ex.Number + ")");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occured: " + ex.Message);
+                    }
+                }
+            }
         }
     }
 }
