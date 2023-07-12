@@ -25,12 +25,11 @@ namespace ProjectUAS
 
         private void refreshform()
         {
-            txtNamaPembeli.Enabled = false;
             txtNamaPengarang.Enabled = false;
             txtHargaBuku.Enabled = false;
             txtIDBuku.Visible = false;
             btnSave.Enabled = false;
-            btnClear.Enabled = false;
+            btnDelete.Enabled = false;
             btnAdd.Enabled = true;
 
         }
@@ -71,30 +70,15 @@ namespace ProjectUAS
 
         private void txtNamaPembeli_SelectedIndexChanged(object sender, EventArgs e)
         {
-            koneksi.Open();
-            string id = "";
-            string strs = "select ID from dbo.Pembeli where nama_pembeli = @nm";
-            SqlCommand cm = new SqlCommand(strs, koneksi);
-            cm.CommandType = CommandType.Text;
-            cm.Parameters.Add(new SqlParameter("@nm", txtNamaPembeli.Text));
-            SqlDataReader dr = cm.ExecuteReader();
-            while (dr.Read())
-            {
-                id = dr["ID"].ToString();
-            }
-            dr.Close();
-            koneksi.Close();
-
-            txtIDBuku.Text = id;
+           
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            txtNamaPembeli.Enabled = true;
             txtNamaPengarang.Enabled = true;
             txtHargaBuku.Enabled = true;
             txtIDBuku.Visible = true;
-            btnClear.Enabled = true;
+            btnDelete.Enabled = true;
             btnSave.Enabled = true;
             btnAdd.Enabled = true;
         }
@@ -144,7 +128,72 @@ namespace ProjectUAS
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            refreshform();
+            string dlt = "DELETE FROM buku WHERE id_buku = @id_buku";
+            using (SqlConnection conn = new SqlConnection(stringConnection))
+            {
+                using (SqlCommand cmd = new SqlCommand(dlt, conn))
+                {
+                    cmd.Parameters.AddWithValue("id_buku", txtIDBuku.Text);
+                    try
+                    {
+                        conn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        MessageBox.Show("Data Berhasil Dihapus");
+                        dataGridView();
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("An Error Occurred: " + ex.Message + ("Error Code: " + ex.Number));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An Error occurred: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string upd = "UPDATE buku SET id_buku = @id_buku, nama_pengarang = @nama_pengarang, harga = @harga where id_buku = @id_buku";
+
+            using (SqlConnection conn = new SqlConnection(stringConnection))
+            {
+                using (SqlCommand cmd = new SqlCommand(upd, conn))
+                {
+                    cmd.Parameters.AddWithValue("id_buku", txtIDBuku.Text);
+                    cmd.Parameters.AddWithValue("nama_pengarang", txtNamaPengarang.Text);
+                    cmd.Parameters.AddWithValue("harga", txtHargaBuku.Text);
+
+
+                    try
+                    {
+                        conn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        MessageBox.Show("Data Berhasil di Updated");
+                        dataGridView();
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("An error occured: " + ex.Message + " (Error Code: " + ex.Number + ")");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occured: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void txtNamaPembeli_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -49,6 +49,7 @@
             this.btnClear.TabIndex = 29;
             this.btnClear.Text = "Delete";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSave
             // 

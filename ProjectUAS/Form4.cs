@@ -14,12 +14,13 @@ namespace ProjectUAS
     
     public partial class Form4 : Form
     {
-        string connectionString = "data source = LAPTOP-CK57KRTO;database=TokoGramedia;MultipleActiveResultSets=True;User ID = sa; Password = Mudah123";
+        string stringConnection = "data source = LAPTOP-CK57KRTO;database=TokoGramedia;MultipleActiveResultSets=True;User ID = sa; Password = Mudah123";
         private SqlConnection koneksi;
+
         public Form4()
         {
             InitializeComponent();
-            koneksi = new SqlConnection(connectionString);
+            koneksi = new SqlConnection(stringConnection);
             refreshform();
         }
 
@@ -48,7 +49,7 @@ namespace ProjectUAS
         private void dataGridView()
         {
             koneksi.Open();
-            string str = "select id_kasir, id_kasir from dbo.kasir";
+            string str = "select * from dbo.kasir";
             SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -103,7 +104,30 @@ namespace ProjectUAS
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            refreshform();
+            string dlt = "DELETE FROM kasir WHERE id_kasir = @id_kasir";
+            using (SqlConnection conn = new SqlConnection(stringConnection))
+            {
+                using (SqlCommand cmd = new SqlCommand(dlt, conn))
+                {
+                    cmd.Parameters.AddWithValue("id_kasir", txtIDKasir.Text);
+                    try
+                    {
+                        conn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        MessageBox.Show("Data Berhasil Dihapus");
+                        dataGridView();
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("An Error Occurred: " + ex.Message + ("Error Code: " + ex.Number));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An Error occurred: " + ex.Message);
+                    }
+                }
+            }
         }
 
         private void btnOpen_Click(object sender, EventArgs e)

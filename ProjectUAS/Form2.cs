@@ -95,6 +95,11 @@ namespace ProjectUAS
 
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void form2()
         {
          

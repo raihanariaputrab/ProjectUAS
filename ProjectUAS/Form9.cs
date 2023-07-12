@@ -20,7 +20,6 @@ namespace ProjectUAS
         {
             InitializeComponent();
             koneksi = new SqlConnection(stringConnection);
-            refreshform();
         }
 
         private void IDBuku_Click(object sender, EventArgs e)
@@ -52,12 +51,36 @@ namespace ProjectUAS
             koneksi.Close();
         }
 
-        private void refreshform()
+        private void DataGridView2()
         {
-            txtIDBuku.Text = "";
+            koneksi.Open();
+            string str = "select * from dbo.pembeli";
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            dataGridView2.DataSource = ds.Tables[0];
+            koneksi.Close();
         }
 
+
+
         private void Form9_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataGridView2();
+            btnAdd.Enabled = false;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
